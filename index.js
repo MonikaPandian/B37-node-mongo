@@ -6,10 +6,10 @@ import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
 
 dotenv.config()
-console.log(process.env)
+console.log(process.env.MONGO_URL)
 
 const app= express();
-const PORT = 9000;
+const PORT = process.env.PORT;
 const movies = [
     {   
         "id":100,
@@ -91,8 +91,7 @@ const movies = [
       }
 ]
 
-
-const MONGO_URL ="mongodb://localhost:27017" 
+const MONGO_URL = process.env.MONGO_URL 
 
 async function createConnection(){
   const client = new MongoClient(MONGO_URL)
