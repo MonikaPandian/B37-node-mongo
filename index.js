@@ -124,7 +124,7 @@ app.get("/movies",async(request,response)=>{
       request.query.rating = +request.query.rating
     }
     console.log(request.query.rating)
-    const movie = await client.db("Movies").collection("movies").find(request.query).toArray();
+    const movie = await client.db("b37wd").collection("movies").find(request.query).toArray();
     response.send(movie);
   })
 
