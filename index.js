@@ -113,8 +113,6 @@ app.get("/movies",async(request,response)=>{
     // console.log(request.query,language,rating);
 
     // let filteredMovies = movies;
-    const movie = await client.db("Movies").collection("movies").find({}).toArray();
-
     
     // if(language){
     //   filteredMovies = filteredMovies.filter((mv)=>mv.language == language);
@@ -122,7 +120,11 @@ app.get("/movies",async(request,response)=>{
     // if(rating){
     //   filteredMovies = filteredMovies.filter((mv)=>mv.rating == rating)
     // }
-
+    if(request.query.rating){
+      request.query.rating = +request.query.rating
+    }
+    console.log(request.query.rating)
+    const movie = await client.db("Movies").collection("movies").find(request.query).toArray();
     response.send(movie);
   })
 
