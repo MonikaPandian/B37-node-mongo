@@ -21,7 +21,7 @@ const movies = [
     "poster": "https://upload.wikimedia.org/wikipedia/en/8/8b/No_Country_for_Old_Men_poster.jpg",
     "rating": 6,
     "summary": "A hunter's life takes a drastic turn when he discovers two million dollars while strolling through the aftermath of a drug deal. He is then pursued by a psychopathic killer who wants the money.",
-    language: "tamil"
+    "language": "tamil"
   },
   {
     "id": 103,

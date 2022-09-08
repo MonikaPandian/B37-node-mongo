@@ -5,11 +5,11 @@ export async function getAllMovies(request){
 }
 
 export async function getMovieById(id){
-    return await client.db("b37wd").collection("movies").findOne({id:+id});
+    return await client.db("b37wd").collection("movies").findOne({ id:+id });
 }
 
 export async function deleteMovieById(id){
-    return await client.db("b37wd").collection("movies").deleteOne({id:+id});
+    return await client.db("b37wd").collection("movies").deleteOne({ id:+id });
 }
 
 export async function addMovies(newMovies){
@@ -17,5 +17,5 @@ export async function addMovies(newMovies){
 }
 
 export async function UpdateMovieById(id,UpdateMovie){
-    return await client.db("b37wd").collection("movies").UpdateOne({id:+id}, { $set : UpdateMovie });
+    return await client.db("b37wd").collection("movies").UpdateOne({ id:+id }, { $set : UpdateMovie });
 }

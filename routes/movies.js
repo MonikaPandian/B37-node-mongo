@@ -42,8 +42,9 @@ router.post("/",async (request,response)=>{
   })
  
   router.put("/:id",async(request,response)=>{
+    const { id } = request.params;
     const UpdateMovie = request.body;
-    console.log(UpdateMovie)
+     //db.movies.updateOne({id:"102"}, { $set : updateMovie})
     const result = await UpdateMovieById(id,UpdateMovie)
     response.send(result) 
   })
