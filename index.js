@@ -12,7 +12,7 @@ console.log(process.env.MONGO_URL)
 
 const app= express();
 const PORT = process.env.PORT;
-const MONGO_URL = process.env.MONGO_URL
+const MONGO_URL = process.env.MONGO_URL;
 
 async function createConnection(){
   const client = new MongoClient(MONGO_URL)
