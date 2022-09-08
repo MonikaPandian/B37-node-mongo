@@ -132,7 +132,7 @@ app.get("/movies",async(request,response)=>{
 app.get("/movies/:id",async(request,response)=>{
     const {id} = request.params;
     console.log(id)
-    const movie = await client.db("Movies").collection("movies").findOne({id:+id});
+    const movie = await client.db("b37wd").collection("movies").findOne({id:id});
     console.log(movie)
     movie
     ?  response.send(movie)
@@ -152,7 +152,7 @@ app.post("/movies",async (request,response)=>{
 app.delete("/movies/:id",async(request,response)=>{
   const {id} = request.params;
   console.log(id)
-  const movie = await client.db("Movies").collection("movies").deleteOne({id:id});
+  const movie = await client.db("b37wd").collection("movies").deleteOne({id:+id});
   response.send(movie) 
 })
 
