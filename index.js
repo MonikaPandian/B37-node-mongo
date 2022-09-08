@@ -8,7 +8,6 @@ import { getAllMovies, addMovies, getMovieById, deleteMovieById,UpdateMovieById}
 import { moviesRouter} from './routes/movies.js';
 
 dotenv.config()
-console.log(process.env.MONGO_URL)
 
 const app= express();
 const PORT = process.env.PORT;
