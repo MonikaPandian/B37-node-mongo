@@ -1,6 +1,6 @@
 // const express = require('express');
 // const {MongoClient} = require('mongodb')
-
+import cors from "cors";
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
@@ -12,6 +12,7 @@ import bcrypt from "bcrypt";
 dotenv.config()
 
 const app= express();
+app.use(cors())
 const PORT = process.env.PORT;
 const MONGO_URL = process.env.MONGO_URL;
 
