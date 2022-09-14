@@ -4,8 +4,10 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
-import { getAllMovies, addMovies, getMovieById, deleteMovieById,UpdateMovieById} from './helper.js';
+import { getAllMovies, addMovies, getMovieById, deleteMovieById,UpdateMovieById, genPassword} from './helper.js';
 import { moviesRouter} from './routes/movies.js';
+import { userRouter } from './routes/user.js';
+import bcrypt from "bcrypt";
 
 dotenv.config()
 
@@ -31,6 +33,8 @@ app.get("/",(request,response)=>{
 //specify movie router
 
 app.use('/movies',moviesRouter)
+
+app.use('/users',userRouter)
 
 //create a server
 app.listen(PORT,()=>console.log("server started on port",PORT));
