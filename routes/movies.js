@@ -4,7 +4,7 @@ import { auth } from "../middleware/auth.js";
 const router = express.Router();
 
 //get movies
-router.get("/",auth,async(request,response)=>{    
+router.get("/",async(request,response)=>{    
     if(request.query.rating){
       request.query.rating = +request.query.rating;
     }
@@ -14,7 +14,7 @@ router.get("/",auth,async(request,response)=>{
   })
 
   //get movies with id
-router.get("/:id",auth,async(request,response)=>{
+router.get("/:id",async(request,response)=>{
     const {id} = request.params;
     console.log(id)
     const movie = await getMovieById(id)
