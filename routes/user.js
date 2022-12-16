@@ -49,7 +49,7 @@ router.post("/signup",async (request,response)=>{
     const token = jwt.sign({id: userFromDB._id},process.env.SECRET_KEY)
     response.send({message: "Successful login",token:token}) 
 
-    response.send(isPasswordMatch)
+   
     // if( !/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#%$]).{8,}$/g.test(password)){
     //     response.status(400).send({message:"password pattern does not match"})
     //     return;

@@ -4,10 +4,8 @@ import cors from "cors";
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from 'dotenv';
-import { getAllMovies, addMovies, getMovieById, deleteMovieById,UpdateMovieById, genPassword} from './helper.js';
 import { moviesRouter} from './routes/movies.js';
 import { userRouter } from './routes/user.js';
-import bcrypt from "bcrypt";
 
 dotenv.config()
 
